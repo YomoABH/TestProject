@@ -44,7 +44,7 @@ function getUserForServer() {
 
 		}
 	})
-		.them(res => res.json())
+		.then(res => res.json())
 		.then((users) => {
 			state.users = state.users.concat(users)
 			fillPostsList(state.users)
