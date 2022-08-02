@@ -37,7 +37,7 @@ function fillPostsList(users) {
 
 
 function getUserForServer() {
-	fetch("http://127.0.0.1:8000/api/v1/account/", {
+	fetch("http://127.0.0.1:8000/api/v1/ac%D1%81ount/", {
 		headers: {
 			"content-type": "application/json; charset=UTF-8",
 			"Access-Control-Allow-Origin": "http://127.0.0.1:8000/"
