@@ -30,7 +30,7 @@ function fillPostsList(users) {
 	root.innerHTML = ""
 
 	if (users.length) {
-		users.forEach(user => root.innerHTML += createElement(user))
+		users.forEach(user => list.innerHTML += createElement(user))
 	}
 	console.log('отрисовка контента');
 }
