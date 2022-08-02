@@ -27,7 +27,7 @@ function createElement(users) {
 
 // ? ФУНКЦИЯ ЗАПОЛНЕНИЯ ПОСТА
 function fillPostsList(users) {
-	root.innerHTML = ""
+	list.innerHTML = ""
 
 	if (users.length) {
 		users.forEach(user => list.innerHTML += createElement(user))
@@ -40,8 +40,6 @@ function getUserForServer() {
 	fetch("http://127.0.0.1:8000/api/v1/ac%D1%81ount/?format=json", {
 		headers: {
 			"content-type": "application/json; charset=UTF-8",
-			"Access-Control-Allow-Origin": "http://127.0.0.1:8000/"
-
 		}
 	})
 		.then(res => res.json())
