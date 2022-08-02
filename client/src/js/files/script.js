@@ -10,29 +10,31 @@ const state = {
 	users: [],
 }
 
-btn.addEventListener('click', async () => {
-	await getUserForServer();
+btn.addEventListener('click', () => {
+	getUserForServer();
 })
 
 
-function createElement(users) {
-	`
+const createElement = (user) => {
+	return (
+		`
 	<li class="item">
-		<div class="name">${users.name}</div>
-		<div class="phone">${users.number}</div>
-		<div class="age">${users.age}</div>
+		<div class="name">${user.name}</div>
+		<div class="phone">${user.number}</div>
+		<div class="age">${user.age}</div>
 	</li>
 	`
+	)
 }
 
 // ? ФУНКЦИЯ ЗАПОЛНЕНИЯ ПОСТА
 function fillPostsList(users) {
-	list.innerHTML = ""
+	list.innerHTML = " "
 
 	if (users.length) {
+
 		users.forEach(user => list.innerHTML += createElement(user))
 	}
-	console.log('отрисовка контента');
 }
 
 
