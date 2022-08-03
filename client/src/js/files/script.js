@@ -46,7 +46,19 @@ function getUserForServer() {
 	})
 		.then(res => res.json())
 		.then((users) => {
-			state.users = state.users.concat(users)
+			state.users = state.users.concat(users.humans)
 			fillPostsList(state.users)
 		})
+		.catch(error => list.innerHTML = printErrorList())
+}
+
+const printErrorList = () => {
+	return (
+		`
+	<li class = "error-item">
+		Упс... Произошла ошибка
+	</li>
+`
+	)
+
 }
