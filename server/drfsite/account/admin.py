@@ -1,4 +1,7 @@
 from django.contrib import admin
-from . models import Some
+from .models import Some
 
-admin.site.register(Some)
+
+@admin.register(Some)
+class SomeAdmin(admin.ModelAdmin):
+    list_display = ('id', )
