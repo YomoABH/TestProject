@@ -37,7 +37,7 @@ class SomeApiView(APIView):
         pk = kwargs.get('pk', None)
 
         if pk is None:
-            return Response({'error': 'Метод PUT не рабочий'})
+            return Response({'error': 'Метод Delete не рабочий'})
         some = Some.objects.get(pk=pk)
         name = some.name
         some.delete()
