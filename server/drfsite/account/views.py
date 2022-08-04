@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 class SomeApiView(APIView):
     def get(self, request):
         humans = Some.objects.all()
-        return Response({'humans': SomeSerializer(humans, many=True).data})
+        return Response({'posts': SomeSerializer(humans, many=True).data})
 
     def post(self, request):
         serializer = SomeSerializer(data=request.data)
@@ -31,7 +31,7 @@ class SomeApiView(APIView):
         serializer = SomeSerializer(data=request.data, instance=instance)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({'post': serializer.data})
+        return Response({'posts': serializer.data})
 
     def delete(self, request, *args, **kwargs):
         pk = kwargs.get('pk', None)
@@ -41,7 +41,7 @@ class SomeApiView(APIView):
         some = Some.objects.get(pk=pk)
         name = some.name
         some.delete()
-        return Response({'after_delete': '{}, удален'.format(name)})
+        return Response({'posts': '{}, удален'.format(name)})
 
 
 
