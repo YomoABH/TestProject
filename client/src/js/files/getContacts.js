@@ -5,10 +5,10 @@ const state = {
 }
 
 //* вызов API 
-fetch("http://127.0.0.1:8000/api/v1/ac%D1%81ount/?format=json")
+fetch("http://127.0.0.1:8000/api/v1/account/")
 	.then(res => res.json())
 	.then(contacts => {
-		state.contacts = state.contacts.concat(contacts.humans)
+		state.contacts = state.contacts.concat(contacts.posts)
 		pushContact(state.contacts)
 	})
 

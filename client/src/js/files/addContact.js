@@ -13,7 +13,7 @@ addBtn.addEventListener('click', (el) => {
 		age: inputAge.value
 	}
 
-	fetch('http://127.0.0.1:8000/api/v1/acсount/', {
+	fetch('http://127.0.0.1:8000/api/v1/account/', {
 		headers: {
 			"Content-Type": "application/json; UTF-8"
 		},
