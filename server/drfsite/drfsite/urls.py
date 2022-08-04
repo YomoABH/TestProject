@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from account.views import SomeApiView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/acсount/', SomeApiView.as_view()),
+    path('api/v1/account/', SomeApiView.as_view()),
+    path('api/v1/account/<int:pk>/', SomeApiView.as_view())
 ]
