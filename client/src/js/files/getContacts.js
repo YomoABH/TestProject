@@ -8,7 +8,7 @@ const state = {
 fetch("http://127.0.0.1:8000/api/v1/account/")
 	.then(res => res.json())
 	.then(contacts => {
-		state.contacts = state.contacts.concat(contacts.posts)
+		state.contacts = state.contacts.concat(contacts)
 		pushContact(state.contacts)
 	})
 
