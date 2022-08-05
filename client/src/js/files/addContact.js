@@ -1,12 +1,10 @@
-const addBtn = document.querySelector('.addContact__btn')
+
 const inputName = document.querySelector('.addContact__name')
 const inputNumber = document.querySelector('.addContact__number')
 const inputAge = document.querySelector('.addContact__age')
 
-import { state, getContacts, createContact, pushContact } from "./getContacts.js"
 
-addBtn.addEventListener('click', async (el) => {
-	el.preventDefault()
+const addContact = async () => {
 	const data = {
 		name: inputName.value,
 		number: inputNumber.value,
@@ -21,13 +19,12 @@ addBtn.addEventListener('click', async (el) => {
 		method: 'POST',
 	})
 	clearInput()
-	getContacts()
-})
-
+}
 
 const clearInput = () => {
 	inputName.value = ""
 	inputNumber.value = ""
 	inputAge.value = ""
-
 }
+
+export { addContact, inputName, inputNumber, inputAge }

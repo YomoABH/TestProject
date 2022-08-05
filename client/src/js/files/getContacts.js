@@ -6,12 +6,13 @@ const state = {
 
 
 //* вызов API 
-const getContacts = () => {
-	fetch("http://127.0.0.1:8000/api/v1/account/")
+const getContacts = async () => {
+	await fetch("http://127.0.0.1:8000/api/v1/account/")
 		.then(res => res.json())
 		.then(contacts => {
 			state.contacts = state.contacts.concat(contacts)
 			pushContact(state.contacts)
+
 		})
 }
 
@@ -45,7 +46,5 @@ const pushContact = (contacts) => {
 	}
 }
 
-document.addEventListener('load', getContacts())
 
-
-export { state, getContacts, createContact, pushContact }
+export { getContacts, state }
