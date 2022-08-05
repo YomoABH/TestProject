@@ -7,4 +7,5 @@ class Some(models.Model):
     number = models.CharField(max_length=12)
     age = models.SmallIntegerField()
 
-
+    class Meta:
+        ordering = ['-id']
