@@ -4,13 +4,16 @@ const state = {
 	contacts: [],
 }
 
+
 //* вызов API 
-fetch("http://127.0.0.1:8000/api/v1/account/")
-	.then(res => res.json())
-	.then(contacts => {
-		state.contacts = state.contacts.concat(contacts)
-		pushContact(state.contacts)
-	})
+const getContacts = () => {
+	fetch("http://127.0.0.1:8000/api/v1/account/")
+		.then(res => res.json())
+		.then(contacts => {
+			state.contacts = state.contacts.concat(contacts)
+			pushContact(state.contacts)
+		})
+}
 
 //* Создание шаблона контакта
 const createContact = (contact) => {
@@ -41,3 +44,8 @@ const pushContact = (contacts) => {
 		})
 	}
 }
+
+document.addEventListener('load', getContacts())
+
+
+export { state, getContacts, createContact, pushContact }
